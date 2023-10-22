@@ -14,3 +14,11 @@ for create  a new tsconfig.json file:
 
     tsc --init
 
+  inside tsconfig.json change some options:
+  
+```json
+  "rootDir": "./src",
+  "outDir": "./dist",
+  "removeComments": true,
+  "sourceMap": true, // for debugging
+```
