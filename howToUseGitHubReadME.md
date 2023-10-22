@@ -39,8 +39,8 @@ this is text without any tab
   1 tab without \n
 0 tab without \n
 
-  this mean all simple text without any tab a
-  
-  and the text with one tab is normal text with \n
-  
-  and the text with 2 or more tabs is text you can structer and copy it like a code part 
+this mean all simple text without any tab a
+
+and the text with one tab is normal text with \n
+
+and the text with 2 or more tabs is text you can structer and copy it like a code part 
