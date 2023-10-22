@@ -21,8 +21,19 @@ const form = document.querySelector('form')
 ### using a header 2 by (###)
 - now i use header 2
 
-  this is normal text with one tab
+  this is normal text with one tab and (\n)
 
-and this is also without any tab
+and this is text without any tab and (\n)
 
-    this is text with 2 tabs
+    this is text with 2 tabs and \n
+
+    this is text with 2 tabs and \n
+      this is text with 3 tabs without \n
+
+      this is text 3 with \n
+
+        this is text with 4 tabs and \n
+      3 tab without \n
+    2 tab without \n
+  1 tab without \n
+0 tab without \n
