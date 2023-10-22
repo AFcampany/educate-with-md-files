@@ -118,7 +118,7 @@ this is italic text using *italic text* using * you can use _ also
 
 this is bold and italic text using (***) ***i am atomic***
 
-this is sup and sub text using <sub> <sup> anis<sub>this is sub</sub> anis<sub>this is sub</sub>
+this is sup and sub text using anis<sub>this is sub</sub> anis<sub>this is sub</sub>
 
 > this is a quote using (>) in the begin of text
 
