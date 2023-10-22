@@ -10,9 +10,7 @@
 
 ## how to insert code
 
-- use the (```{language}
-  {code}
-```) like that
+- use the (```) for open and close the code in open use the language like js
 
 ```js
 
