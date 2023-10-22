@@ -43,11 +43,16 @@ this mean using 0 or 1 tab is for normal text
 
 to separate lines use empty line between them
     
-  use 2 tabs and add empty line above to convert normal text to text can copy and structe
-  then you can structer text like a code in code editor
-    and this is amazing
+    use 2 tabs and add empty line above to convert normal text to text can copy and structe
+    then you can structer text like a code in code editor
+      and this is amazing
 
-    wow this is amazing
+      wow this is amazing
 
 
     this text with 2 above empty lines
+
+this is normal text
+
+
+this text with 2 above empty lines
