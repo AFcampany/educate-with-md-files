@@ -62,3 +62,11 @@ this text with 2 above empty lines and nothing change.
 this zero tab line
 
   this one tab line
+
+#### for (####) level 3 header
+
+  this is hider of level 3
+
+  [Javascript Nuggets - Destructuring (Array)](https://www.youtube.com/watch?v=qhECs40xMec&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ&index=7&t=9s)
+
+  to add url add title of url inside [squrbracket] and the link inside (this)
