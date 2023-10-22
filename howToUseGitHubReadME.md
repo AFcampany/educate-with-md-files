@@ -32,9 +32,13 @@ and this is text without any tab and (\n)
       this is text with 3 tabs without \n
 
       this is text 3 with \n
-
+this is text without any tab
         this is text with 4 tabs and \n
       3 tab without \n
     2 tab without \n
   1 tab without \n
 0 tab without \n
+
+  this mean all simple text without any tab a
+  and the text with one tab is normal text with \n
+  and the text with 2 or more tabs is text you can structer and copy it like a code part 
