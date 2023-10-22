@@ -97,3 +97,7 @@ this zero tab line
   2. item number 2
   2. item number 3
     1. item number 1 nested
+
+  1. item number 1
+      1. item number 1 nested
+          1. item number 1 nested nested
