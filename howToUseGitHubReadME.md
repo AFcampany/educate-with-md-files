@@ -33,11 +33,11 @@ and this is text without any tab and (\n)
 
       this is text 3 with \n
 this is text without any tab
-        this is text with 4 tabs and \n
-      3 tab without \n
-    2 tab without \n
-  1 tab without \n
-0 tab without \n
+        this is text with 4 tabs and \n.
+      3 tab without \n.
+    2 tab without \n.
+  1 tab without \n.
+0 tab without \n.
 
 this mean using 0 or 1 tab is for normal text
 
@@ -55,4 +55,10 @@ to separate lines use empty line between them
 this is normal text
 
 
-this text with 2 above empty lines
+this text with 2 above empty lines and nothing change.
+
+  this one tab line
+
+this zero tab line
+
+  this one tab line
