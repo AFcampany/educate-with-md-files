@@ -101,3 +101,11 @@ this zero tab line
   1. item number 1
       1. item number 1 nested
           1. item number 1 nested nested
+          
+1. item number 1 without any tab
+    1. item number 1 nested
+        1. item number 1 nested nested
+
+    1. item number 1
+        1. item number 1 nested
+            1. item number 1 nested nested
