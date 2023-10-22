@@ -88,3 +88,12 @@ this zero tab line
   3. item number 3
 
   5, item number 5
+
+  1. item number 1
+    1. item number 1 nested
+    2. item number 2 nested
+      1. time number 1 nested nested
+    3. item number 3 nested
+  2. item number 2
+  2. item number 3
+    1. item number 1 nested
