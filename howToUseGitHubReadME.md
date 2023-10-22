@@ -74,3 +74,17 @@ this zero tab line
   try link with normal text [visit google](https://google.com)
 
   and this how is lock [visit google] (https://google.com) make sure that is no space between title and href link
+
+  use syntax like this 1. lorem to use ordered list example
+
+  1. item number 1
+  2. item number 2
+  4. item number 4
+
+  1. item number 1 with empty line above
+
+  2. item number 2
+
+  3. item number 3
+
+  5, item number 5
