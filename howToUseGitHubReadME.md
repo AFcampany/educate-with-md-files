@@ -25,6 +25,7 @@ const form = document.querySelector('form')
 
 and this is text without any tab and (\n)
 
+      this is text with 3 tabs
     this is text with 2 tabs and \n
 
     this is text with 2 tabs and \n
