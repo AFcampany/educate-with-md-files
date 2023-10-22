@@ -368,7 +368,50 @@ console.log((data as string).repeat(3))
   - the symbole & is used  to create an intersection => and
 - If a union is an or, then an intersection is an and
 
-### 21
+```ts
+type A = {
+  one: string,
+  two: number,
+  three: boolean,
+}
+
+type B = A & {
+  four: number
+}
+
+type C = {
+  five: boolean
+}
+
+type mix = A & C
+
+function getActionsA(btns: A) {
+  console.log(`Hello ${btns.one}`)
+  console.log(`Hello ${btns.two}`)
+  console.log(`Hello ${btns.three}`)
+}
+getActionsA({ one: 'string', two: 100, three: true })
+
+function getActionsB(btns: B) {
+  console.log(`Hello ${btns.one}`)
+  console.log(`Hello ${btns.two}`)
+  console.log(`Hello ${btns.three}`)
+  console.log(`Hello ${btns.four}`)
+}
+getActionsB({ one: 'string', two: 100, three: true, four: 100 })
+
+
+function getActionsMix(btns: mix) {
+  console.log(`Hello ${btns.one}`)
+  console.log(`Hello ${btns.two}`)
+  console.log(`Hello ${btns.three}`)
+  // console.log(`Hello ${btns.four}`) // if your use it it false
+  console.log(`Hello ${btns.five}`)
+
+}
+getActionsMix({ one: 'string', two: 100, three: true, five: false })
+```
+### 21 Type annotations with object
 ### 22
 ### 23
 ### 24
@@ -380,3 +423,9 @@ console.log((data as string).repeat(3))
 ### 30
 ### 31
 ### 32
+### 33
+### 34
+### 35
+### 36
+### 37
+### 38
