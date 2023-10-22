@@ -70,3 +70,7 @@ this zero tab line
   [Javascript Nuggets - Destructuring (Array)](https://www.youtube.com/watch?v=qhECs40xMec&list=PLnHJACx3NwAfRUcuKaYhZ6T5NRIpzgNGJ&index=7&t=9s)
 
   to add url add title of url inside [squrbracket] and the link inside (this)
+
+  try link with normal text [visit google](https://google.com)
+
+  and this how is lock [visit google] (https://google.com) make sure that is no space between title and href link
