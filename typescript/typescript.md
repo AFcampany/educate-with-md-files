@@ -562,13 +562,295 @@ class User {
 let user = new User('elzero', 6000)
 ```
 ### 28 Class access modifiers
-### 29
-### 30
-### 31
-### 32
-### 33
-### 34
-### 35
-### 36
-### 37
-### 38
+example: 
+```ts
+class User {
+  private user: string
+  protected salary: number
+  msg: () => string
+  constructor(username: string, salary: number) {
+    this.name = username
+    this.salary = salary
+    this.message = function () {
+      return `Hello ${this.name} Your salary is ${this.salary}`
+    }
+  }
+  sayMsg(){
+    return `Hello ${this.name} Your salary is ${this.salary}`
+  }
+}
+let user = new User('elzero', 6000)
+```
+
+another sysntax with some midification:
+```ts
+class User {
+  msg: () => string
+  // here will use this.username = username automaticaly no need to write it
+  constructor(private username: string,protected salary: number, public readonly address: string) {
+    this.message = function () {
+      return `Hello ${this.username} Your salary is ${this.salary}`
+    }
+  }
+  sayMsg(){
+    return `Hello ${this.username} Your salary is ${this.salary}`
+  }
+}
+let user = new User('elzero', 6000, 'cayro')
+```
+
+### 29 class accessors
+
+example:
+```ts
+class User {
+  msg: () => string
+  // here will use this.username = username automaticaly no need to write it
+  constructor(private _username: string,public salary: number, public readonly address: string) {
+    this.message = function () {
+      return `Hello ${this._username} Your salary is ${this.salary}`
+    }
+  }
+  sayMsg(){
+    return `Hello ${this._username} Your salary is ${this.salary}`
+  }
+  public get username(): string {
+    return this._username
+  }
+  public set username(value: string) {
+    this._username = value
+  }
+}
+let user = new User('elzero', 6000, 'cayro')
+user.username = 'ahmed' // how to change value with setter
+let name: string = user.username // how to get value with getter
+```
+
+### 30 Class static members
+
+```ts
+class User {
+  private static created: number = 0
+  static getCount(): string {
+    return `${User.created} Objects created`
+  }
+  constructor(public username: string) {
+    User.created++
+  }
+}
+
+let user1 = new User('elzero')
+let user2 = new User('anis')
+let user3 = new User('osama')
+let num: number = User.getCount()
+```
+same but with getter and setter
+```ts
+class User {
+  private static _created: number = 0
+  constructor(public username: string) {
+    User._created++
+  }
+
+  public static get created(): number {
+    return User._created
+  }
+  public static set created(value: number) {
+    User._created = value
+  }
+}
+
+let user1 = new User('elzero')
+let user2 = new User('anis')
+let user3 = new User('osama')
+let num: number = User.getCount()
+```
+### 31 class implements interface
+example: 
+```ts
+interface Settings {
+  theme: boolean,
+  font: string,
+  save(): void;
+}
+
+class User implements Settings {
+  constructor(public username: string, public theme: boolean, public font:string){}
+  save(): void {
+    console.log(`saved`)
+  }
+  update(): void {
+    console.log(`update`)
+  }
+}
+
+let User = new User(`elzero`, true, `open sans`)
+```
+### 32 abstract class and members
+- we cannot create an instance of an abstract class
+
+example: 
+```ts
+abstract class Food {
+  constructor(public title: string) {}
+  abstract getCookingTime(): void
+}
+
+class Pizza extends Food {
+  constructor(title: string, public price: number) {
+    super(title)
+  }
+  getCookingTime(): void {
+    console.log(`cooking time for pizza is 1 hour`)
+  }
+}
+
+class Burger extends Food {
+  constructor(title: string, public price: number) {
+    super(title)
+  }
+  getCookingTime(): void {
+    console.log(`cooking time for burger is half hour`)
+  }
+}
+```
+
+### 33 Polymorphism and method override
+
+- polymorphism
+  - classes have the same methods but different implementations
+-method override
+  - allowing child class to provide implementation of a method in parent class
+  - a method in child class must have same name as parent class
+
+example:
+```ts
+class Player {
+  constructor(public name: string) {}
+  attack(): void {
+    console.log(`attacking now`)
+  }
+}
+
+class Amazon extends Player {
+  constructor(name: string, public spears: number) {
+    super(name)
+  }
+  override attack(): { // overide attack methode
+    console.log(`attacking with spear`)
+    this.spears--
+  } 
+}
+
+class Barbarian extends Player {
+  constructor(name: string, public axeDurability: number) {
+    super(name)
+  }
+  override attack(): {
+    console.log(`attacking with axe`)
+    this.axeDurability -= 5
+  } 
+}
+```
+  when turn no implict override to true you must add override key word!
+```json
+  "noImplicitOverride": true,
+```
+
+### 34 Generics introduction
+
+- help write  a reusable code
+- allow to pass type as a parameter to another type
+- you will be able to deal with multiple types without using ': any type'
+- we can create:
+  - Generic classes
+  - Generic Functions
+  - Generic Methods
+  - Generic Interfaces
+
+example: 
+```ts
+returnType<T>(val: T): T {
+  return val
+}
+// use function
+console.log(returnType<number>(100))
+console.log(returnType<string>('elzero'))
+console.log(returnType<boolean>(true))
+console.log(returnYype<number[]>([1, 2, 3, 4]))
+```
+### 35 Generics Multiple types
+
+using arro function:
+```ts
+const returns = <T>(val: T): T => val
+console.log(returns<number>(12))
+```
+
+example 2:
+```ts
+function test<T>(val: T): string { // accept generic type and return allways string
+  return `the value is ${val} and type is ${typeof val}`
+}
+console.log(test<number>(100))
+console.log(test<string>('elzero'))
+```
+
+example 3:
+```ts
+function multiple<T, S>(val1: T, val2: S): string {
+  return `The first value is ${val1} and second value is ${val2}`
+}
+console.log(multiple<string, number>('osama', 100))
+console.log(multiple<string, boolean>('osama', true))
+```
+
+### 36 Generics classes
+
+```ts
+class User <T = number>{ // set number as default type
+  constructor(public value: T) {}
+  show(msg: T): void {
+    console.log(`${msg} - ${this.value}`)
+  }
+}
+
+let userOne = new User<string>('elzero')
+userOne.show('elzero')
+let userTwo = new User<number | string>(100) // here add string for show method it show Generic and the generec is defferent then string and if you want string you must add it
+userTwo.show(`string`)
+```
+
+### 37 Generics and interfaces
+
+```ts
+interface Book {
+  itemType: string,
+  title: string,
+  isbn: number,
+}
+
+interface Game {
+  itemType: string,
+  title: string,
+  style: string,
+  price: number,
+}
+class Colleaction {
+  public data: T[] = []
+  add(item: T): void {
+    this.data.push(item)
+  }
+}
+
+let itemOne = new Collection<Book>()
+itemOne.add({itemType: `book`, title: 'follow your heart', isbn: 23445})
+itemOne.add({itemType: `book`, title: 'attomic habits', isbn: 25890})
+
+let itemTwo = new Collection<Game>()
+itemTwo.add({ itemType: 'game', title: 'uncharted', style: 'action', price: 59})
+```
+### 38 end and how to master typescript
+
+learn JSDocs
+Ts config
