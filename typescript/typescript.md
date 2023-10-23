@@ -412,13 +412,156 @@ function getActionsMix(btns: mix) {
 getActionsMix({ one: 'string', two: 100, three: true, five: false })
 ```
 ### 21 Type annotations with object
-### 22
-### 23
-### 24
-### 25
-### 26
-### 27
-### 28
+  example:
+  ```ts
+  let myObject: {
+    readonly username: string, // you can't change the username property
+    id: number,
+    hire?: boolean, // you can use ? for set property optional
+    skills: {
+      one: string,
+      two: string,
+    }
+  } = {
+    username: 'Elzero',
+    id: 100,
+    // hire: true,
+    skills: {
+      one: 'html',
+      two: 'css',
+    }
+  }
+  ```
+### 22 Interface Declaration
+
+- serve like types
+- The interface describes the shape of an object
+- it defines the syntax to follow
+
+- use with object 
+- use with function
+- use read only and optional operator
+
+example:
+```ts
+interface User {
+  readonly id: number, // you can't change the value of id
+  username: string,
+  country?: string, // you can use ? for optional property
+}
+
+let user: User = {
+  id: 100,
+  username: 'elzero',
+  country: 'egypt',
+}
+```
+
+### 23 Interface Methods and params
+
+example:
+```ts
+interface User {
+  readonly id: number, // you can't change the value of id
+  username: string,
+  country?: string, // you can use ? for optional property
+  sayHello(): string,
+  sayWelcome: () => string,
+  getDouble(num: number): number,
+}
+
+let user: User = {
+  id: 100,
+  username: 'elzero',
+  country: 'egypt',
+  sayHello() {
+    return `Hellow ${this.username}`
+  }
+  sayWelcome: () => `Welcome ${this.username}`,
+  getDouble(n) {
+    return n * 2
+  }
+}
+```
+### 24 Interface and ReOpen
+
+```ts
+// in home page
+interface Settings {
+  readonly theme: boolean, // for none changing values
+  font: string,
+}
+
+// in Article page
+interface Settings {
+  sidebar?: boolean, // to make it optional
+}
+
+// in Contatc page
+interface Settings {
+  external: boolean,
+}
+
+// in other page you can use all properties
+let userSettings: Settings = {
+  theme: true,
+  font: 'Open Sans',
+  sidebar: false, // optional
+  external: true,
+}
+```
+### 25 Interface Extend
+
+example:
+```ts
+interface User {
+  id: number, // you can't change the value of id
+  username: string,
+  country: string,
+}
+
+interface Moderator {
+  role: string | number,
+}
+
+interface Admin extends User, Moderator {
+  protect: boolean,
+}
+
+let user: Admin {
+  id: 1,
+  username: 'elzero',
+  country: 'egypt',
+  role: 'mod',
+  protect: true,
+}
+```
+### 26 Interface final discussion
+  interafce is better then type alias
+  - advantage of interface re-open
+  - advantage of interface extends
+
+### 27 Class type annotation
+example: 
+```ts
+class User {
+  user: string
+  salary: number
+  msg: () => string
+  constructor(username: string, salary: number) {
+    this.name = username
+    this.salary = salary
+    this.message = function () {
+      return `Hello ${this.name} Your salary is ${this.salary}`
+    }
+  }
+  sayMsg(){
+    return `Hello ${this.name} Your salary is ${this.salary}`
+  }
+}
+let user = new User('elzero', 6000)
+```
+### 28 Class access modifiers
 ### 29
 ### 30
 ### 31
